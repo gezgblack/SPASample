@@ -15,41 +15,29 @@
 
 	<script type="text/javascript">
 		!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
-		e.load("2TqT23WBmtX6m91yGplRyeTtzZS","https://rudderstacudgv.dataplane.rudderstack.com"),
-		e.page()}();
+		e.load("2TqT23WBmtX6m91yGplRyeTtzZS","https://rudderstacudgv.dataplane.rudderstack.com")
+		}();
 		</script>
 
 <script>
 	$(document).ready(function($) {
     var e0 = $(document).find('.screen_data');
-    var s1 = $(document).find('.screen_home').html();
-    e0.html(s1);
+    
+    function loadSection(screen_name) {
+        var sectionHtml = $(document).find('.screen_' + screen_name).html();
+        e0.html(sectionHtml);
+        rudderanalytics.page(screen_name);
+    }
 
+    // Initial page load
+    loadSection('home'); // You can replace 'home' with the default section
+    
     $(document).on('click', '.btn_menu', function(event) {
         event.preventDefault();
-
         var screen_name = $(this).attr('screen_name');
-
         window.location.hash = '/' + screen_name;
-
         $(document).find('.screen_name').html(screen_name);
-
-        if (screen_name == "home") {
-            var s1 = $(document).find('.screen_home').html();
-            e0.html(s1);
-            // Call rudderanalytics.page("Home") here
-            rudderanalytics.page("Home");
-        } else if (screen_name == "about") {
-            var s1 = $(document).find('.screen_about').html();
-            e0.html(s1);
-            // Call rudderanalytics.page("About") here
-            rudderanalytics.page("About");
-        } else if (screen_name == "contact") {
-            var s1 = $(document).find('.screen_contact').html();
-            e0.html(s1);
-            // Call rudderanalytics.page("Contact") here
-            rudderanalytics.page("Contact");
-        }
+        loadSection(screen_name);
     });
 });
 </script>
