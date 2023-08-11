@@ -10,6 +10,12 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
 
+	<script type="text/javascript">
+		!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
+		e.load("2TqT23WBmtX6m91yGplRyeTtzZS","https://rudderstacudgv.dataplane.rudderstack.com"),
+		e.page()}();
+		</script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script> 
 
@@ -63,9 +69,9 @@
 	<div class="screen_home">
 		<div class="text-center">
 		 	<h1 class="mt-5">A Single Page Web Application</h1>
-
 		 	<img src="https://placeimg.com/640/480/people">
 	        <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
+			<script>rudderanalytics.page("Home")</script>
 	    </div>
 	</div>
 	<!--[home > end]-->	
@@ -80,6 +86,7 @@
 
 		<h2>Midst Beast She&#39;d Together All</h2>
 		<p>Bearing one one land. Moved stars under fill waters open whales. Give face were sea it. Winged life Life yielding. Give beast appear form don&#39;t place that unto cattle sixth.</p>
+		<script>rudderanalytics.page("About")</script>
 	</div>
 
 	<!--[contact > start]-->
@@ -108,6 +115,8 @@
 			    <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
 			    <div class="validate"></div>
 			  </div>
+
+			  <script>rudderanalytics.page("Contact")</script>
 			
 			  <div class="text-center"><button type="submit">Send Message</button></div>
 			</form>
